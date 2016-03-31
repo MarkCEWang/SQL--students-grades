@@ -1,0 +1,85 @@
+mysql> describe tutee's info;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| colour | varchar(32) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> describe things;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(255) | YES  |     | NULL    |                |
+| description | text         | YES  |     | NULL    |                |
+| tangible    | int(1)       | YES  |     | NULL    |                |
+| colour_id   | int(11)      | YES  | MUL | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe tutees;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| id       | int(11)          | NO   | PRI | NULL    | auto_increment |
+| username | varchar(32)      | NO   |     | NULL    |                |
+| password | varchar(32)      | NO   |     | NULL    |                |
+| admin    | enum('yes','no') | YES  |     | no      |                |
+| enabled  | int(1)           | YES  |     | 1       |                |
++----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe users_like_things;
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| users_id  | int(11) | NO   | PRI | NULL    |       |
+| tutee_id  | int(11) | NO   | PRI | NULL    |       |
++-----------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+mysql> select * from average;
++----+--------+
+| id | colour |
++----+--------+
+|  1 | A      |
+|  2 | B      |
+|  3 | C      |
++----+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from things;
++----+-------+-------------+----------+-----------+
+| id | name  | tutor'sname | Periods  |     trend |
++----+-------+-------------+----------+-----------+
+|  1 | Rick  | Mark        |        1 |         1 |
+|  2 | Jeff  | Alireza     |        0 |      0    |
++----+-------+-------------+----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from users;
++----+----------+----------+-------+---------+
+| id | username | password | admin | enabled |
++----+----------+----------+-------+---------+
+|  1 | tyler    | secret   | yes   |       1 |
+|  2 | benoit   | secret2  | no    |       1 |
+|  4 | steve    |          | no    |       0 |
++----+----------+----------+-------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from users_like_things;
++----------+-----------+
+| students_id | things_id |
++----------+-----------+
+|        1 |         1 |
+|        2 |         1 |
+|        2 |         2 |
++----------+-----------+
+3 rows in set (0.00 sec)
+

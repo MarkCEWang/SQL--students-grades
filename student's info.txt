@@ -1,0 +1,76 @@
+Basics
+	Relational Database
+	Table structure / like excel
+	Used very widely for storing all kinds of data, especially anything that is catagorical
+		Very useful for statistics
+		Used for fast-access, and read/write (no write penalty)
+	Other types of databases:
+		Key-Value stores:
+			Memcache
+			NoSQL
+		Hierarchical:
+			LDAP
+Getting started
+	Install mysql-server, mysql (client), mysql-libs
+	First start
+	Setting the root user's password
+	Starting/stopping mysql
+	Getting into mysql client
+	Connecting otherwise - TCP port 3306
+Design
+	Creating a simple database
+		CREATE DATABASE mystuff;
+	Creating a simple table
+		Field Types
+			Numbers: int, float
+			Text: varchar, text
+			Other: date, time, datetime, Blob, enum
+			Big/Tiny
+		AUTO_INCREMENT
+		CREATE TABLE users ( 
+				id INT AUTO_INCREMENT,
+				username VARCHAR(32) NOT NULL, 
+				password VARCHAR(32) NOT NULL,
+				admin ENUM('yes','no') DEFAULT 'no',
+				PRIMARY KEY (id)
+				)
+		Alter table
+			ALTER TABLE users ADD COLUMN enabled INT(1) DEFAULT 1;
+	Creating a more advanced database
+		When to split into different tables
+		Relationships between tables (foreign key vs. business logic)
+			FOREIGN KEY (users_id) REFERENCES users(id) ON DELETE CASCADE
+Basic Administration
+	Granting/revoking access
+		mysql table
+	Changing passwords
+	Repairing crashed tables
+	SHOW PROCESSLIST
+	my.conf
+Queries
+	SELECT
+		(what to select)
+		WHERE
+			AND / OR / Brackets
+		GROUPby / Having
+		Order by
+		Limit / Offset
+		Max, Min, Average, Count (& effect of grouping)
+	JOINs
+		Left/right
+		Inner/outer
+		Default left inner
+	INSERT
+	UPDATE
+	DELETE
+	INFILE
+	Sub-SELECTs
+Query performance
+	Table scan vs. Index scan
+	EXPLAIN
+	Indexes & Keys
+		PRIMARY KEY
+		UNIQUE
+		INDEX
+	ANALYZE
+	OPTIMIZE

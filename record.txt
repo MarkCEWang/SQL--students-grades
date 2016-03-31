@@ -1,0 +1,11 @@
+Contents of "MATH_OPS_Tutoring_16_-_MySQL.zip":
+Archive Name: "MATH_OPS_Tutoring_16_-_MySQL.zip"
+Archive File Size: 3127 bytes
+File Count: 3 files
+
+File Name         Attributes      Size      Modified Date    Method       CRC     Ratio
+---------------------------------------------------------------------------------------
+db structure.txt       -A---      3466  06-Jun-2015 11:04  Deflated  e27c7240     19.2%
+students' info.txt     -A---      1805  06-Jun-2015 11:08  Deflated  aee3405c     56.8%
+mysql-export.sql       -A---      4473  06-Jun-2015 11:12  Deflated  9fc6e821     24.3%
+---------------------------------------------------------------------------------------
